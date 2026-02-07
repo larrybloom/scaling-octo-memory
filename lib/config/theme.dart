@@ -10,7 +10,7 @@ class AppTheme {
       primaryColor: AppColors.primary,
       scaffoldBackgroundColor: AppColors.background,
       fontFamily: 'Inter',
-      
+
       // AppBar Theme
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.white,
@@ -24,18 +24,18 @@ class AppTheme {
         ),
         systemOverlayStyle: SystemUiOverlayStyle.dark,
       ),
-      
-      // Card Theme
-      cardTheme: CardTheme(
-        color: AppColors.cardBackground,
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-          side: const BorderSide(color: AppColors.border, width: 1),
-        ),
-        margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      ),
-      
+
+      // // Card Theme
+      // cardTheme: CardTheme(
+      //   color: AppColors.cardBackground,
+      //   elevation: 0,
+      //   shape: RoundedRectangleBorder(
+      //     borderRadius: BorderRadius.circular(12),
+      //     side: const BorderSide(color: AppColors.border, width: 1),
+      //   ),
+      //   margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      // ),
+
       // Button Themes
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -52,7 +52,7 @@ class AppTheme {
           ),
         ),
       ),
-      
+
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           foregroundColor: AppColors.primary,
@@ -67,12 +67,13 @@ class AppTheme {
           ),
         ),
       ),
-      
+
       // Input Decoration Theme
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: Colors.white,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(color: AppColors.border),
@@ -98,7 +99,7 @@ class AppTheme {
           fontSize: 14,
         ),
       ),
-      
+
       // Text Theme
       textTheme: const TextTheme(
         displayLarge: TextStyle(
@@ -144,7 +145,7 @@ class AppTheme {
           color: AppColors.textTertiary,
         ),
       ),
-      
+
       // Bottom Navigation Bar Theme
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Colors.white,
@@ -153,7 +154,7 @@ class AppTheme {
         type: BottomNavigationBarType.fixed,
         elevation: 8,
       ),
-      
+
       // Divider Theme
       dividerTheme: const DividerThemeData(
         color: AppColors.divider,

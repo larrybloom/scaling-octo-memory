@@ -28,15 +28,13 @@ class _LoginScreenState extends State<LoginScreen> {
   Future<void> _handleLogin() async {
     if (_formKey.currentState!.validate()) {
       setState(() => _isLoading = true);
-      
-      // TODO: Implement actual login logic with your C# backend
+
       await Future.delayed(const Duration(seconds: 2));
-      
+
       setState(() => _isLoading = false);
-      
+
       if (mounted) {
-        // Navigate to dashboard based on user role
-        // Navigator.pushReplacementNamed(context, '/patient-dashboard');
+        Navigator.pushReplacementNamed(context, '/patient-dashboard');
       }
     }
   }
@@ -50,6 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: SingleChildScrollView(
             padding: const EdgeInsets.all(24.0),
             child: Form(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               key: _formKey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -70,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 32),
-                  
+
                   // Title
                   Text(
                     'Welcome to e-Doctor',
@@ -78,14 +77,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 8),
-                  
+
                   Text(
                     'Sign in to continue',
                     style: Theme.of(context).textTheme.bodyMedium,
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 48),
-                  
+
                   // Email Field
                   CustomTextField(
                     controller: _emailController,
@@ -104,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                   ),
                   const SizedBox(height: 16),
-                  
+
                   // Password Field
                   CustomTextField(
                     controller: _passwordController,
@@ -114,8 +113,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     prefixIcon: Icons.lock_outline,
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscurePassword 
-                            ? Icons.visibility_outlined 
+                        _obscurePassword
+                            ? Icons.visibility_outlined
                             : Icons.visibility_off_outlined,
                         color: AppColors.textTertiary,
                       ),
@@ -134,7 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                   ),
                   const SizedBox(height: 8),
-                  
+
                   // Forgot Password
                   Align(
                     alignment: Alignment.centerRight,
@@ -152,7 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 24),
-                  
+
                   // Login Button
                   CustomButton(
                     text: 'Sign In',
@@ -160,7 +159,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: _handleLogin,
                   ),
                   const SizedBox(height: 24),
-                  
+
                   // Divider
                   Row(
                     children: [
@@ -176,7 +175,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                   const SizedBox(height: 24),
-                  
+
                   // Sign Up Link
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -187,8 +186,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          // TODO: Navigate to signup screen
-                          // Navigator.pushNamed(context, '/signup');
+                          Navigator.pushNamed(context, '/signup');
                         },
                         child: const Text(
                           'Sign Up',
@@ -201,7 +199,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                   const SizedBox(height: 32),
-                  
+
                   // Terms and Privacy
                   Text(
                     'By continuing, you agree to our Terms of Service and Privacy Policy',
